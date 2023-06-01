@@ -35,6 +35,7 @@ const updateScreenDetails = async function(req,res){
     const screenIdExist = await screenModel.find({_id:screenId})
     if(!screenIdExist){return res.status(400).send('No such screen Exist')}
      let updateScreenData= req.body
+     
      let {showName,...otherFields} = updateScreenData
 
      if(Object.keys(otherFields).length>0){
